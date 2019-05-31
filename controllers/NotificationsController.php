@@ -53,7 +53,7 @@ class NotificationsController extends Controller
 
 		$modelsAntigos =  $class::find()
 			->where('created_at < now() - interval \'1 day\'')
-			->orderBy(['created_at' => SORT_DESC])
+			->orderBy(['id' => SORT_DESC])
 			->all();
 		//apaga as notificacoes antigas
 		foreach ($modelsAntigos as $m) {
